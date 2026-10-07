@@ -14,3 +14,12 @@ createRoot(document.getElementById('root')!).render(
     <App />
   </StrictMode>,
 )
+
+// PWA: register service worker (production builds only; virtual module from vite-plugin-pwa)
+void import('virtual:pwa-register')
+  .then(({ registerSW }) => {
+    registerSW({ immediate: true })
+  })
+  .catch(() => {
+    /* SW module absent in some test/dev contexts */
+  })
