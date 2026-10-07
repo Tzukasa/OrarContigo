@@ -1,0 +1,34 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  --font-scale: 1;
+}
+
+/* Drop-cap for prayer titles (P02) — CSS only, no image */
+.prayer-dropcap::first-letter {
+  color: var(--color-sacred);
+  font-weight: 700;
+  float: left;
+  font-size: 2.4em;
+  line-height: 0.85;
+  padding-right: 0.08em;
+  padding-top: 0.08em;
+}

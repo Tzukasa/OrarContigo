@@ -1,0 +1,51 @@
+/* Generated from tokens.json — use roles, never raw hex in components */
+:root {
+  --color-bg: #F7F0E6;
+  --color-surface: #FFFBF5;
+  --color-border: #E5D9C8;
+  --color-border-input: #8A7A66;
+  --color-text: #2A2118;
+  --color-text-muted: #6B5C4C;
+  --color-accent: #2F5F5A;
+  --color-on-accent: #FFFFFF;
+  --color-danger: #B33A3A;
+  --color-success: #2F6B4F;
+  --color-warning: #B8831A;
+  --color-prayer-bg: #1A2F3A;
+  --color-prayer-surface: #243B48;
+  --color-prayer-text: #F5F0E8;
+  --color-prayer-muted: #B8C4C9;
+  --color-caption-bg: rgba(10, 16, 20, 0.78);
+  --color-caption-text: #FFFFFF;
+  --color-bead: #F2EDE4;
+  --color-bead-marker: #5B8A8A;
+  --color-bead-active: #D4A84B;
+  --color-bead-glow: rgba(212, 168, 75, 0.55);
+  --color-sacred: #C9A227;
+  --color-home-warm: #F3E2C8;
+
+  --font-sans: Manrope, Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+  --font-serif: "Source Serif 4", "Source Serif Pro", Georgia, Cambria, serif;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 2px 8px rgba(42, 33, 24, 0.08), 0 1px 2px rgba(42, 33, 24, 0.06);
+  --shadow-entry: 0 8px 24px rgba(42, 33, 24, 0.14);
+  --shadow-bead-active: 0 0 16px rgba(212, 168, 75, 0.55);
+
+  --motion-fast: 120ms;
+  --motion-base: 200ms;
+  --motion-bead: 280ms;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  --header-h: 52px;
+  --caption-h-min: 72px;
+  --max-w: 480px;
+  --entry-size: 96px;
+  --chevron-size: 48px;
+  --bead-sm: 10px;
+  --bead-lg: 16px;
+}
