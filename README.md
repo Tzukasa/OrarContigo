@@ -4,7 +4,7 @@ Rosario y Coronilla en español latinoamericano. Sin cuenta, sin servidor: prefe
 
 ## Live
 
-https://tzukasa.github.io/OrarContigo/
+**https://tzukasa.github.io/OrarContigo/**
 
 ## Dev
 
@@ -17,10 +17,14 @@ npm run test:e2e
 
 ## Deploy (GitHub Pages)
 
-Push to `main` runs `.github/workflows/pages.yml` (`GITHUB_PAGES=1` → Vite `base: /OrarContigo/`).
+Project Pages with Vite `base: /OrarContigo/` when `GITHUB_PAGES=1`.
 
-Manual: `npm run deploy:pages`
+```bash
+npm run deploy:pages   # build:pages + gh-pages → branch gh-pages
+```
+
+Source: `main`. Site: `gh-pages` branch / root.
 
 ## Privacidad
 
-Ver [/privacidad](https://tzukasa.github.io/OrarContigo/privacidad) — no recopilamos datos.
+[/privacidad](https://tzukasa.github.io/OrarContigo/privacidad) — no recopilamos datos; solo `localStorage` local.
