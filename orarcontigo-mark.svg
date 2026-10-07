@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="OrarContigo">
+  <rect width="1024" height="1024" rx="224" fill="#2F5F5A"/>
+  <circle cx="512" cy="512" r="340" fill="none" stroke="#C9A227" stroke-width="28"/>
+  <circle cx="512" cy="512" r="12" fill="#C9A227"/>
+  <text x="512" y="560" text-anchor="middle" font-family="Manrope, Inter, system-ui, sans-serif" font-size="320" font-weight="700" fill="#FFFFFF" letter-spacing="-8">OC</text>
+</svg>
