@@ -104,6 +104,44 @@ test.describe('F03 P01 / P02 / A01', () => {
     )
   })
 
+  test('F03-H5 A01 Tema: Oscuro sets data-theme=dark and persists', async ({
+    page,
+  }) => {
+    await page.emulateMedia({ colorScheme: 'light' })
+    await page.goto('/ajustes')
+    await page.evaluate(() => localStorage.removeItem('rosario.prefs'))
+    await page.reload()
+    const html = page.locator('html')
+    // default 'system' + light OS → light
+    await expect(page.getByRole('radio', { name: 'Automático' })).toHaveAttribute(
+      'aria-checked',
+      'true',
+    )
+    await expect(html).toHaveAttribute('data-theme', 'light')
+
+    await page.getByRole('radio', { name: 'Oscuro' }).click()
+    await expect(html).toHaveAttribute('data-theme', 'dark')
+    const stored = await page.evaluate(() =>
+      JSON.parse(localStorage.getItem('rosario.prefs') || '{}'),
+    )
+    expect(stored.theme).toBe('dark')
+
+    // persists; no-flash script sets it before the app mounts
+    await page.reload({ waitUntil: 'commit' })
+    await page.waitForFunction(() => document.documentElement.dataset.theme)
+    await expect(html).toHaveAttribute('data-theme', 'dark')
+    await expect(page.getByRole('radio', { name: 'Oscuro' })).toHaveAttribute(
+      'aria-checked',
+      'true',
+    )
+
+    // 'system' follows OS live
+    await page.getByRole('radio', { name: 'Automático' }).click()
+    await expect(html).toHaveAttribute('data-theme', 'light')
+    await page.emulateMedia({ colorScheme: 'dark' })
+    await expect(html).toHaveAttribute('data-theme', 'dark')
+  })
+
   test('F03-E1 empty search shows empty state', async ({ page }) => {
     await page.goto('/oraciones')
     await page.getByLabel('Buscar oración').fill('zzzz-no-existe')

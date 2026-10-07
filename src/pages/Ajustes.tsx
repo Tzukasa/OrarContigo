@@ -3,7 +3,12 @@ import { AppShell } from '../components/AppShell'
 import { TopBar } from '../components/TopBar'
 import { SettingsRow } from '../components/SettingsRow'
 import { SegmentedControl } from '../components/SegmentedControl'
-import { usePrefs, FONT_SCALE_OPTIONS, fontScaleKey } from '../hooks/usePrefs'
+import {
+  usePrefs,
+  FONT_SCALE_OPTIONS,
+  THEME_OPTIONS,
+  fontScaleKey,
+} from '../hooks/usePrefs'
 import { MYSTERY_SETS } from '../data/mysteries'
 import type { MysterySetId } from '../data/types'
 
@@ -96,6 +101,16 @@ export function AjustesPage() {
               value: o.key,
               label: o.label,
             }))}
+          />
+        </SettingsRow>
+        {/* Tema: Automático = 'system' (follows OS light/dark live) */}
+        <SettingsRow variant="select" label="Tema">
+          <SegmentedControl
+            name="theme"
+            label="Tema"
+            value={prefs.theme}
+            onChange={(theme) => update({ theme })}
+            options={THEME_OPTIONS}
           />
         </SettingsRow>
         <div className="mt-8 px-4 text-center">

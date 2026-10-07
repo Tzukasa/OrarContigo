@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { loadPrefs, savePrefs } from '../data/prefs'
 import type { UserPrefs } from '../data/types'
+import { applyTheme } from '../theme'
 
 const FONT_SCALE_CSS = '--font-scale'
 
@@ -15,6 +16,10 @@ export function usePrefs() {
     applyFontScale(prefs.fontScale)
   }, [prefs.fontScale])
 
+  useEffect(() => {
+    applyTheme(prefs.theme)
+  }, [prefs.theme])
+
   const update = useCallback((partial: Partial<UserPrefs>) => {
     const next = savePrefs(partial)
     setPrefs(next)
@@ -23,6 +28,13 @@ export function usePrefs() {
 
   return { prefs, update }
 }
+
+/** A01 Tema options (value = prefs.theme). */
+export const THEME_OPTIONS = [
+  { value: 'light' as const, label: 'Claro' },
+  { value: 'dark' as const, label: 'Oscuro' },
+  { value: 'system' as const, label: 'Automático' },
+]
 
 /** Map UI segment labels ↔ numeric fontScale. */
 export const FONT_SCALE_OPTIONS = [

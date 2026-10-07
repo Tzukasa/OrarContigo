@@ -40,7 +40,7 @@ export function SegmentedControl<T extends string>({
             name={name}
             disabled={disabled}
             onClick={() => onChange(opt.value)}
-            className={`min-w-[4.5rem] flex-1 px-3 font-sans text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent ${
+            className={`min-w-[4.5rem] flex-auto whitespace-nowrap px-3 font-sans text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent ${
               selected
                 ? 'bg-accent text-on-accent'
                 : 'bg-surface text-muted'

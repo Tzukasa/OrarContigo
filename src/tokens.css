@@ -24,6 +24,8 @@
   --color-sacred: #C9A227;
   --color-home-warm: #F3E2C8;
 
+  color-scheme: light;
+
   --font-sans: Manrope, Inter, system-ui, -apple-system, Segoe UI, sans-serif;
   --font-serif: "Source Serif 4", "Source Serif Pro", Georgia, Cambria, serif;
 
@@ -48,4 +50,45 @@
   --chevron-size: 48px;
   --bead-sm: 10px;
   --bead-lg: 16px;
+}
+
+/* ==========================================================================
+   DARK THEME — applied when <html data-theme="dark"> (A01 Tema; see src/theme.ts
+   and the no-flash IIFE in index.html). Same role names as :root; colour roles
+   (+ card shadows) only. Type, radius, motion, sizes stay shared.
+   ========================================================================== */
+/* Apps Diseño AA dark tokens (source: replica/design/tokens.dark.css, 0 AA fails) */
+[data-theme="dark"] {
+  --color-bg: #12100D;
+  --color-surface: #1C1915;
+  --color-border: #332E27;
+  --color-border-input: #9E8F7C;
+  --color-text: #F0E9DD;
+  --color-text-muted: #B3A796;
+  --color-accent: #6FB3AC;
+  --color-on-accent: #0C1413;
+  --color-danger: #E88A8A;
+  --color-success: #6FBF95;
+  --color-warning: #E0B45A;
+  --color-prayer-bg: #0E1A22;
+  --color-prayer-surface: #182A33;
+  --color-prayer-text: #F5F0E8;
+  --color-prayer-muted: #AEBEC4;
+  --color-caption-bg: rgba(5, 9, 12, 0.82);
+  --color-caption-text: #FFFFFF;
+  --color-bead: #2A2621;
+  --color-bead-marker: #6FA3A3;
+  --color-bead-active: #E0B65A;
+  --color-bead-glow: rgba(224, 182, 90, 0.50);
+  --color-sacred: #E0B65A;
+  --color-home-warm: #2A2318;
+
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.45), 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-entry: 0 8px 24px rgba(0, 0, 0, 0.55);
+  --shadow-bead-active: 0 0 16px rgba(224, 182, 90, 0.50);
+}
+
+/* Native controls/scrollbars follow the active theme */
+[data-theme="dark"] {
+  color-scheme: dark;
 }

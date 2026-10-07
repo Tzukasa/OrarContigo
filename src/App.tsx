@@ -8,6 +8,7 @@ import { OracionDetailPage } from './pages/OracionDetail'
 import { AjustesPage } from './pages/Ajustes'
 import { PrivacidadPage } from './pages/Privacidad'
 import { loadPrefs } from './data/prefs'
+import { useTheme } from './hooks/useTheme'
 
 function applyPrefsCss() {
   const prefs = loadPrefs()
@@ -25,6 +26,7 @@ function routerBasename(): string | undefined {
 }
 
 export default function App() {
+  useTheme()
   useEffect(() => {
     applyPrefsCss()
   }, [])

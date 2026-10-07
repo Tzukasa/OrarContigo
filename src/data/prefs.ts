@@ -9,6 +9,7 @@ const DEFAULTS: UserPrefs = {
   audioAutoAdvance: false,
   mysteriesAuto: true,
   fontScale: 1,
+  theme: 'system',
 }
 
 export function loadPrefs(): UserPrefs {

@@ -49,7 +49,11 @@ export type UserPrefs = {
   mysteriesAuto: boolean
   mysterySetOverride?: MysterySetId
   fontScale: number
+  theme: ThemePref
 }
+
+/** User theme choice; 'system' follows prefers-color-scheme live. */
+export type ThemePref = 'light' | 'dark' | 'system'
 
 /** Static clip metadata; playClip may use TTS today and mp3 src later. */
 export type AudioClip = {
