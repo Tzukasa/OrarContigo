@@ -28,3 +28,9 @@ Source: `main`. Site: `gh-pages` branch / root.
 ## Privacidad
 
 [/privacidad](https://tzukasa.github.io/OrarContigo/privacidad) — no recopilamos datos; solo `localStorage` local.
+
+## PWA / offline
+
+After the first online visit, a service worker caches the app shell so Rosario, Coronilla, and Oraciones work offline. Prefs stay in `localStorage`. Guided audio uses the device Web Speech API (no mp3 files).
+
+Install: browser **Add to Home Screen** / Instalar app (Android Chrome or iOS Safari Share sheet).
