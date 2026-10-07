@@ -18,6 +18,7 @@ export function TopBar({
   showSettings,
 }: Props) {
   const isPrayer = variant === 'prayer'
+  const markSrc = `${import.meta.env.BASE_URL}orarcontigo-mark.svg`
   return (
     <header
       className={`flex h-header shrink-0 items-center gap-2 px-3 ${
@@ -37,7 +38,13 @@ export function TopBar({
           <ArrowLeft size={22} aria-hidden />
         </Link>
       ) : (
-        <span className="w-11" aria-hidden />
+        <Link
+          to="/"
+          aria-label="Inicio"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        >
+          <img src={markSrc} alt="" width={28} height={28} className="h-7 w-7 rounded-md" />
+        </Link>
       )}
       <h1 className="flex-1 truncate text-center font-sans text-lg font-semibold leading-7">
         {title}
